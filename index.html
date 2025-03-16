@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <script src="./src/main.js"></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./src/main.js" defer></script>
     <title>IP Address Tracker</title>
 </head>
 <body>
     <main>
         <h1>IP Address Tracker</h1>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search for any IP address or domain">
+            <button type="button" id="search-button">
+                <img src="./images/icon-arrow.svg" alt="search">
+            </button>
+        </form>
+        <div id="info-container">
+            <div id="ip-address">
+                <h2>IP Address</h2>
+                <p id="ip-address-value">3481098-40</p>
+            </div>    
+
+            <div id="location">
+                <h2>Location</h2>
+                <p id="location-value">Aragua-Maracay</p>
+            </div>
+
+            <div id="timezone">
+                <h2>Timezone</h2>
+                <p id="timezone-value">UTC-05:00</p> 
+            </div>
+
+            <div id="isp">
+                <h2>ISP</h2>
+                <p id="isp-value">SpaceXStarlink</p>
+            </div>
+        </div>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="https://github.com/santiagodev10">santiagoDev 🤖</a>.
+        </div>
     </main>
 </body>
 </html>
