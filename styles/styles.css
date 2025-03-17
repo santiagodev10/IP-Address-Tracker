@@ -1,6 +1,6 @@
 html {
     font-size: 62.5%;
-    font-family: sans-serif, Arial, Helvetica;
+    font-family: "Nunito", sans-serif;
 }
 
 * {
@@ -9,4 +9,113 @@ html {
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+}
+
+:root {
+    --Very-Dark-Gray: hsl(0, 0%, 17%);
+    --Dark-Gray: hsl(0, 0%, 59%);
+}
+
+body {
+    background-color: blue;
+}
+
+main {
+    /* background-image: url('/images/pattern-bg-mobile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top; */
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.background {
+    width: 100%;
+    grid-row: 1/4;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    position: absolute;
+    grid-row: 1/2;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0.8px;
+}
+
+#search-form {
+    position: absolute;
+    grid-row: 2/3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#search-form #search-input {
+    width: 70%;
+    height: 40px;
+    max-width: 360px;
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+    padding: 10px;
+    font-size: 1.6rem;
+}
+
+#search-form #search-button {
+    width: 12%;
+    max-width: 40px;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    background-color: black;
+}
+
+#search-button img {
+    width: 8px;
+}
+
+#info-container {
+    width: 85%;
+    height: 240px;
+    grid-row: 3/8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#ip-address, #location, #timezone, #isp {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+
+.values {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Gray);
+}
+
+.label-title {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--Dark-Gray);
+}
+
+.attribution {
+    grid-row: 10;
 }

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="./src/main.js" defer></script>
@@ -10,6 +13,9 @@
 </head>
 <body>
     <main>
+        <div class="background">
+            <img src="/images/pattern-bg-mobile.png" alt="">
+        </div>
         <h1>IP Address Tracker</h1>
         <form id="search-form">
             <input type="text" id="search-input" placeholder="Search for any IP address or domain">
@@ -19,23 +25,23 @@
         </form>
         <div id="info-container">
             <div id="ip-address">
-                <h2>IP Address</h2>
-                <p id="ip-address-value">3481098-40</p>
+                <h2 class="label-title">IP ADDRESS</h2>
+                <p id="ip-address-value" class="values">3481098-40</p>
             </div>    
 
             <div id="location">
-                <h2>Location</h2>
-                <p id="location-value">Aragua-Maracay</p>
+                <h2 class="label-title">LOCATION</h2>
+                <p id="location-value" class="values">Aragua-Maracay</p>
             </div>
 
             <div id="timezone">
-                <h2>Timezone</h2>
-                <p id="timezone-value">UTC-05:00</p> 
+                <h2 class="label-title">TIMEZONE</h2>
+                <p id="timezone-value" class="values">UTC-05:00</p> 
             </div>
 
             <div id="isp">
-                <h2>ISP</h2>
-                <p id="isp-value">SpaceXStarlink</p>
+                <h2 class="label-title">ISP</h2>
+                <p id="isp-value" class="values">SpaceXStarlink</p>
             </div>
         </div>
 
@@ -43,6 +49,10 @@
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
             Coded by <a href="https://github.com/santiagodev10">santiagoDev 🤖</a>.
         </div>
+        
+        <!-- <div class="map" id="map">
+            <img src="/images/pattern-bg-desktop.png" alt="">
+        </div> -->
     </main>
 </body>
 </html>
