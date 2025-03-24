@@ -21,13 +21,8 @@ body {
 }
 
 main {
-    /* background-image: url('/images/pattern-bg-mobile.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top; */
     display: grid;
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(auto-fill, 40px);
     align-items: center;
     justify-items: center;
     height: 100vh;
@@ -36,26 +31,26 @@ main {
 
 .background {
     width: 100%;
-    grid-row: 1/4;
-}
-
-.background img {
-    width: 100%;
     height: 100%;
+    grid-row: 1/6;
+    background-image: url('/images/pattern-bg-mobile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
 }
 
 h1 {
     position: absolute;
     grid-row: 1/2;
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 2.4rem);
+    font-weight: 700;
     color: white;
-    letter-spacing: 0.8px;
 }
 
 #search-form {
     position: absolute;
-    grid-row: 2/3;
+    grid-row: 2/4;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -68,7 +63,7 @@ h1 {
     border: none;
     border-radius: 10px 0px 0px 10px;
     padding: 10px;
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
 }
 
 #search-form #search-button {
@@ -77,22 +72,22 @@ h1 {
     border: none;
     border-radius: 0px 10px 10px 0px;
     background-color: black;
-}
-
-#search-button img {
-    width: 8px;
+    cursor: pointer;
+    && img {
+        width: 8px;
+    }
 }
 
 #info-container {
-    width: 85%;
+    width: 82%;
     height: 240px;
-    grid-row: 3/8;
+    grid-row: 3/11;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     position: absolute;
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
     background-color: white;
 }
@@ -101,21 +96,44 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    text-align: center;
 }
 
 .values {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 800;
     color: var(--Very-Dark-Gray);
 }
 
 .label-title {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
     letter-spacing: 1px;
     color: var(--Dark-Gray);
 }
 
 .attribution {
-    grid-row: 10;
+    grid-row: -2;
+    padding: 10px;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    color: white;
+    && a {
+        color: rgb(239, 0, 40);
+    }
+}
+
+@media (min-width: 740px) {
+    .background {
+        background-image: url('/images/pattern-bg-desktop.png');
+    }
+
+    #info-container {
+        height: 120px;
+        flex-direction: row;
+        grid-row: 4/8;
+    }
+
+    .separator {
+        width: 1px;
+        height: 60px;
+        background-color: var(--Dark-Gray);
+    }
 }
