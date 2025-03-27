@@ -59,7 +59,7 @@ h1 {
 #search-form #search-input {
     width: 70%;
     height: 40px;
-    max-width: 360px;
+    max-width: 400px;
     border: none;
     border-radius: 10px 0px 0px 10px;
     padding: 10px;
@@ -113,6 +113,7 @@ h1 {
 
 .label-title {
     font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-weight: 800;
     letter-spacing: 1px;
     color: var(--Dark-Gray);
 }

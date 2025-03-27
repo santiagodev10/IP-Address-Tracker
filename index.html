@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./styles/styles.css">
-    <script src="./src/api-calls.js" defer></script>
-    <script src="./src/main.js" defer></script>
+    <!-- <script src="./src/api-calls.js" defer></script> -->
+    <script type="module" src="./src/main.js"></script>
     <title>IP Address Tracker</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
         <div class="background"></div>
         <h1>IP Address Tracker</h1>
         <form id="search-form">
-            <input type="text" id="search-input" placeholder="Search for any IP address or domain">
+            <input type="number" id="search-input" placeholder="Search for any IP address or domain">
             <button type="button" id="search-button">
                 <img src="./images/icon-arrow.svg" alt="search">
             </button>
