@@ -63,7 +63,8 @@ h1 {
     border: none;
     border-radius: 10px 0px 0px 10px;
     padding: 10px;
-    font-size: clamp(1.6rem, 3vw, 1.8rem);
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    color: var(--Dark-Gray);
 }
 
 #search-form #search-button {
@@ -73,9 +74,14 @@ h1 {
     border-radius: 0px 10px 10px 0px;
     background-color: black;
     cursor: pointer;
-    && img {
-        width: 8px;
-    }
+}
+
+#search-form #search-button img {
+    width: 8px;
+}
+
+#search-form #search-button:hover {
+    background-color: var(--Very-Dark-Gray);
 }
 
 #info-container {
@@ -95,6 +101,7 @@ h1 {
 #ip-address, #location, #timezone, #isp {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
 }
 
@@ -111,7 +118,7 @@ h1 {
 }
 
 .attribution {
-    grid-row: -2;
+    grid-row: -1;
     padding: 10px;
     font-size: clamp(1.2rem, 2vw, 1.6rem);
     color: white;
@@ -129,6 +136,11 @@ h1 {
         height: 120px;
         flex-direction: row;
         grid-row: 4/8;
+    }
+
+    #ip-address, #location, #timezone, #isp {
+        max-width: 150px;
+        align-items: flex-start;
     }
 
     .separator {
