@@ -14,5 +14,4 @@ searchInput.addEventListener("keydown", (event) => {
 searchButton.addEventListener("click", (ip) => {
     ip = searchInput.value;
     getIPDetails(ip);
-    //AQUI VA EL LLAMADO A LA FUNCION QUE GENERA EL MAPA EN LA UBICACION INDICADA
 });

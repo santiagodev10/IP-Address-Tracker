@@ -13,6 +13,8 @@ async function getIPDetails(ip) {
             userLocation.textContent = `${data.location.city}, ${data.location.region}`;
             userTimezone.textContent = data.location.timezone;
             userIsp.textContent = data.isp === "" ? "No content available" : data.isp;
+
+            generateMap(data.location.lat, data.location.lng)
         };
 
         const url = ip ? `${API}${API_KEY}&ipAddress=${ip}` : `${API}${API_KEY}`;
@@ -22,11 +24,27 @@ async function getIPDetails(ip) {
         
     } catch (error) {
         console.error(error);
-        userIpAddress.textContent = "No valid request ❌";
-        userLocation.textContent = "No valid request ❌";
-        userTimezone.textContent = "No valid request ❌";
-        userIsp.textContent = "No valid request ❌";
+        userIpAddress.textContent = "Enter a valid address ❌";
+        userLocation.textContent = "Enter a valid address ❌";
+        userTimezone.textContent = "Enter a valid address ❌";
+        userIsp.textContent = "Enter a valid address ❌";
+        const mapContainer = document.getElementById("map");
+        mapContainer.innerText = "Enter a valid address ❌";
+        mapContainer.classList.add("error-map-container");
     }
 }
 
-export {getIPDetails}
+async function generateMap(lat, lgt) {
+    // const mapContainer = document.getElementById("map");
+    // mapContainer.innerHTML = "";
+    const map = L.map('map').setView([lat, lgt], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    const marker = L.marker([lat, lgt]).addTo(map);
+    
+}
+
+export { getIPDetails };

@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./styles/styles.css">
-    <!-- <script src="./src/api-calls.js" defer></script> -->
     <script type="module" src="./src/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <title>IP Address Tracker</title>
 </head>
 <body>
@@ -17,7 +22,7 @@
         <div class="background"></div>
         <h1>IP Address Tracker</h1>
         <form id="search-form">
-            <input type="number" id="search-input" placeholder="Search for any IP address or domain">
+            <input type="text" id="search-input" placeholder="Search for any IP address or domain">
             <button type="button" id="search-button">
                 <img src="./images/icon-arrow.svg" alt="search">
             </button>
@@ -49,9 +54,7 @@
             Coded by <a href="https://github.com/santiagodev10">santiagoDev 🤖</a>.
         </div>
         
-        <!-- <div class="map" id="map">
-            <img src="/images/pattern-bg-desktop.png" alt="">
-        </div> -->
+        <div class="map" id="map"></div>
     </main>
 </body>
 </html>
