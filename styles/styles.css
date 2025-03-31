@@ -111,6 +111,7 @@ h1 {
     font-size: clamp(1.6rem, 3vw, 2rem);
     font-weight: 800;
     color: var(--Very-Dark-Gray);
+    word-break: break-word;
 }
 
 .label-title {
@@ -173,7 +174,7 @@ a:hover {
     }
 
     #ip-address, #location, #timezone, #isp {
-        max-width: 150px;
+        min-width: 100px;
         align-items: flex-start;
     }
 

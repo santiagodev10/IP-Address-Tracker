@@ -23,7 +23,7 @@ async function getIPDetails(ip) {
         const response = await fetch(url);
         console.log(response);
 
-        // Verificar si la respuesta es exitosa y tambien identifica que tipo de error ocurrio
+        // Verify if the response es succesful and identifies what kind of error happened
         if (!response.ok) {
             throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
@@ -44,7 +44,6 @@ async function getIPDetails(ip) {
         const main = document.querySelector("main");
         const errorMessage = document.createElement("p");
 
-        // Mostrar un mensaje de error más específico
         if (error.message.includes("400") || error.message.includes("422")) {
             errorMessage.textContent = "Invalid IP address or domain ❌";
         } else if (error.message.includes("404")) {
@@ -69,25 +68,25 @@ async function generateMap(lat, lgt) {
         }
 
     if (!map) {
-        // Inicializar el mapa si no existe
+        // Initialize the map if it doesn't exist
         map = L.map('map').setView([lat, lgt], 13);
     } else {
-        // Actualizar la vista del mapa existente
+        // Update the view of the existing map
         map.setView([lat, lgt], 13);
 
-        // Eliminar todas las capas existentes del mapa
+        // Remove all of the existing layers of the map
         map.eachLayer((layer) => {
             map.removeLayer(layer);
         });
     }
 
-    // Agregar una nueva capa de tileLayer
+    // Add a new layer of tileLayer
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    // Agregar un nuevo marcador
+    // Add a new marker
     L.marker([lat, lgt]).addTo(map);
 }
 
