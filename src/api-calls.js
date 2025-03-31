@@ -21,19 +21,41 @@ async function getIPDetails(ip) {
 
         const url = ip ? `${API}${API_KEY}&ipAddress=${ip}` : `${API}${API_KEY}`;
         const response = await fetch(url);
+        console.log(response);
+
+        // Verificar si la respuesta es exitosa y tambien identifica que tipo de error ocurrio
+        if (!response.ok) {
+            throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
+
         const data = await response.json();
         updateUI(data);
         
     } catch (error) {
-        console.error(error);
+        console.dir(error);
+        const errorMessageSelected = document.querySelector(".error-map");
+        if (errorMessageSelected) errorMessageSelected.remove();
+
         userIpAddress.textContent = "No content available ❌";
         userLocation.textContent = "No content available ❌";
         userTimezone.textContent = "No content available ❌";
         userIsp.textContent = "No content available ❌";
+
         const main = document.querySelector("main");
         const errorMessage = document.createElement("p");
+
+        // Mostrar un mensaje de error más específico
+        if (error.message.includes("400") || error.message.includes("422")) {
+            errorMessage.textContent = "Invalid IP address or domain ❌";
+        } else if (error.message.includes("404")) {
+            errorMessage.textContent = "IP address not found ❌";
+        } else if (error.message.includes("Failed to fetch")) {
+            errorMessage.textContent = "Network error. Please check your connection ❌";
+        } else {
+            errorMessage.textContent = "An unexpected error occurred ❌";
+        }
+
         mapContainer.classList.add("hide");
-        errorMessage.textContent = "Enter a valid address ❌";
         errorMessage.classList.add("error-map");
         main.appendChild(errorMessage);
     }
